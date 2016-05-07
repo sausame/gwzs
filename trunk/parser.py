@@ -100,11 +100,16 @@ def parse(path):
                 i = line.find('{')
                 j = line.rfind('}')
 
-                return line[i:j+1]
+                return 0, line[i:j+1]
 
-        return ""
+        return -1, ""
 
-    data = getJsonString(path)
+    ret, data = getJsonString(path)
+
+    if ret < 0:
+        print 'Wrong format: {}'.format(path)
+        return
+
     obj = json.loads(data)
 
     thisPrice = ThisPrice(obj['thisPrice'])
