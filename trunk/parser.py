@@ -97,10 +97,10 @@ def parse(path):
 
             if len(line) > 1024:
 
-                i = line.find('{')
-                j = line.rfind('}')
+                start = line.find('{')
+                end = line.rfind('}')
 
-                return 0, line[i:j+1]
+                return 0, line[start:end+1]
 
         return -1, ""
 
