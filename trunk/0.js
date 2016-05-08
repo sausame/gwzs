@@ -112,6 +112,7 @@ function requestPriceInfo(title, pageUrl) {
     return aJax(REQUEST_ID, request);
 }
 
-var content = requestPriceInfo("Lebond", "http://item.jd.com/962374.html");
-document.write(content);
+//var content = requestPriceInfo("Lebond", "http://item.jd.com/962374.html");
+//content;
+//document.write(content);
 
