@@ -53,3 +53,7 @@ http://splinter.readthedocs.io/en/latest/install.html
 `Python`
 
 http://stackoverflow.com/questions/191010/how-to-get-a-complete-list-of-objects-methods-and-attributes
+
+http://wiki.woodpecker.org.cn/moin/VimPython
+
+https://github.com/rkulla/pydiction
