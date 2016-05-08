@@ -83,7 +83,7 @@ class PriceHistoryData:
 
         str = ''
         for history in self.histories:
-            str = str + '{}\n'.format(history)
+            str += '{}\n'.format(history)
 
         return "{}:\n{}\n{}".format(self.__class__.__name__, '\n'.join(fields), str)
 
