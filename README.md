@@ -1,8 +1,7 @@
-# gwzs
+Dependencies
+========
 
-Add dependencies:
-
-`python-spidermonkey`
+- SpiderMonkey
 
 $ sudo apt-get install libnspr4-dev
 
@@ -14,11 +13,11 @@ http://www.cnblogs.com/ifantastic/p/3413007.html
 
 http://stackoverflow.com/questions/1055850/file-i-o-in-spidermonkey
 
-`Node JS`
+- Node JS
 
 $ sudo apt-get install nodejs
 
-`pyv8`
+- PyV8
 
 $ sudo apt-get install libv8-dev
 
@@ -36,13 +35,13 @@ http://www.cnblogs.com/bushe/p/4443294.html
 
 'However, pyv8 failed to be compiled in Ubuntu 15.10.'
 
-`PyExecJS`
+- PyExecJS
 
 $ sudo pip install PyExecJS
 
 https://github.com/doloopwhile/PyExecJS
 
-`Call JS in python`
+- Call JS in python
 
 http://stackoverflow.com/questions/8284765/call-javascript-function-from-python
 
@@ -50,10 +49,11 @@ http://www.zhihu.com/question/36450326
 
 http://splinter.readthedocs.io/en/latest/install.html
 
-`Python`
+- Python
 
 http://stackoverflow.com/questions/191010/how-to-get-a-complete-list-of-objects-methods-and-attributes
 
 http://wiki.woodpecker.org.cn/moin/VimPython
 
 https://github.com/rkulla/pydiction
+
