@@ -7,7 +7,7 @@ class Item:
         self.set(**kwargs)
 
     def set(self, **kwargs):
-        for keyword in ["wareId", "wname", "imageurl", "jdPrice",
+        for keyword in ["wareId", "wname", "imageurl", "jdPrice", "soldRate",
             "spuId", "rate", "startRemainTime", "endRemainTime",
             "miaoShaPrice", "discount", "tagType", "tagText",
             "clockNum", "startTimeShow", "resultSort"]:
