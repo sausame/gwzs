@@ -1,6 +1,8 @@
 import json
 import sys
 
+from ware import PriceHistory
+
 class ThisPrice:
 
     def __init__(self, dictObj):
@@ -33,7 +35,7 @@ class ThisItem:
         self.set(dictObj)
 
     def set(self, dictObj):
-        self.id = dictObj.pop("id")
+        self.itemId = dictObj.pop("id")
         self.price = dictObj.pop("price")
         self.updateTime = dictObj.pop("updateTime")
         self.cpsUrl = dictObj.pop("cpsUrl")
@@ -50,21 +52,6 @@ class ThisItem:
             for k, v in self.__dict__.items() if not k.startswith("_")]
 
         return "{}:\n{}".format(self.__class__.__name__, '\n'.join(fields))
-
-class PriceHistory:
-
-    def __init__(self, **kwargs):
-        self.set(**kwargs)
-
-    def set(self, **kwargs):
-        for keyword in ["price", "time"]:
-            setattr(self, keyword, kwargs[keyword])
-
-    def __repr__(self):
-        fields = ['    {}={!r}'.format(k, v)
-            for k, v in self.__dict__.items() if not k.startswith("_")]
-
-        return "  {}:\n{}".format(self.__class__.__name__, '\n'.join(fields))
 
 class PriceHistoryData:
 

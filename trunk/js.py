@@ -1,11 +1,14 @@
 import spidermonkey
 
-def loadfile(filename):
-    return open(filename).read()
-
 class PriceInfo:
 
     def __init__(self, filename):
+        def loadfile(filename):
+            fp = open(filename)
+            content = fp.read()
+            fp.close()
+            return content
+
         self.rt = spidermonkey.Runtime()
         self.cx = self.rt.new_context()
         self.cx.add_global("loadfile", loadfile)

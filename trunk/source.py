@@ -1,6 +1,6 @@
 import json
 
-class Item:
+class SeckillItem:
 
     def __init__(self, **kwargs):
         self.set(**kwargs)
@@ -38,7 +38,7 @@ class SeckillInfo:
 
     def set(self, dictObj):
         self.timeRemain = dictObj.pop("timeRemain")
-        self.itemList = [Item(**item) for item in dictObj["itemList"]]
+        self.itemList = [SeckillItem(**item) for item in dictObj["itemList"]]
 
     def __repr__(self):
 
