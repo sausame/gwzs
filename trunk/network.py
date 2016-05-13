@@ -9,7 +9,7 @@ def saveHttpData(filename, url, host=None):
         host = url[start:start+end]
         url = url[start+end:]
 
-    print host, url, filename
+#    print host, url, filename
 
     conn = httplib.HTTPConnection(host)  
     conn.request("GET", url)
@@ -28,15 +28,4 @@ def saveHttpData(filename, url, host=None):
     fp.close()
 
     return 0 
-
-start = 26
-size = 5
-gids = [x for x in range(start, start + size)]
-
-for gid in gids:
-    '''
-    ret = saveHttpData('%d.json' % gid, '/seckill/seckillList.json?gid=%d' % gid, 'coupon.m.jd.com')
-    '''
-    ret = saveHttpData('%d.json' % gid, 'http://coupon.m.jd.com/seckill/seckillList.json?gid=%d' % gid)
-    print gid, ret
 

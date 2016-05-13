@@ -1,3 +1,4 @@
+from datetime import tzinfo, timedelta, datetime
 
 class PriceHistory:
 
@@ -27,7 +28,7 @@ class WareItem:
 
         # Prices
         self.price = item.miaoShaPrice
-        self.histories += PriceHistory(price=item.jdPrice, time=datetime.now().strftime("%Y-%m-%d"))
+        self.histories.append(PriceHistory(price=item.jdPrice, time=datetime.now().strftime("%Y-%m-%d")))
 
         # Start and end times
         self.startTime = item.startTimeShow

@@ -74,20 +74,25 @@ class PriceHistoryData:
 
         return "{}:\n{}\n{}".format(self.__class__.__name__, '\n'.join(fields), str)
 
-def parse(path):
+
+def parsePriceHistory(path):
 
     def getJsonString(path):
 
-        fh = open(path)
+        try:
+            with open(path) as fh:
 
-        for line in fh.readlines(): 
+                for line in fh.readlines(): 
 
-            if len(line) > 1024:
+                    if len(line) > 1024:
 
-                start = line.find('{')
-                end = line.rfind('}')
+                        start = line.find('{')
+                        end = line.rfind('}')
 
-                return 0, line[start:end+1]
+                        return 0, line[start:end+1]
+
+        except IOError:
+            pass
 
         return -1, ""
 
@@ -95,26 +100,32 @@ def parse(path):
 
     if ret < 0:
         print 'Wrong format: {}'.format(path)
-        return
+        return None
 
     obj = json.loads(data)
 
+    '''
     thisPrice = ThisPrice(obj['thisPrice'])
     print thisPrice
 
     thisItem = ThisItem(obj["thisItem"])
     print thisItem
+    '''
 
-    priceHistoryData = PriceHistoryData(obj["priceHistoryData"])
-    print priceHistoryData
+    try:
+        return PriceHistoryData(obj["priceHistoryData"])
+    except KeyError:
+        pass
+
+    return None
 
 
 '''
 Main entrance
-'''
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-parse('../branch/data/toothbrush.js')
+parsePriceHistory('../branch/data/toothbrush.js')
+'''
 

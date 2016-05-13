@@ -25,6 +25,8 @@ class PriceInfo:
     def __exit__(self, type, value, trace):
         pass
 
+'''
 with PriceInfo('0.js') as priceInfo: 
     content = priceInfo.execute("Lebond", "http://item.jd.com/962374.html");
     print content
+'''
